@@ -3,14 +3,14 @@ import { useState } from "react"
 import { table } from "console"
 
 export default function Banner() {
-    const [player, setPlayer] = useState("X")
-    const [list, setList] = useState(["", "", "", "", "", "", "", "", ""])
+   const[player, setplayer] = useState ("X")
+   const [list, setlist] = useState (["","","","","","","","",""])
 
     function marcar(index:number){
         if(list[index] != "X")return
         list[index] = player
-        setList([...list])
-        setPlayer(player == "X" ? "O" : "X")
+        setlist([...list])
+        setplayer(player == "X" ? "0" : "X")
     }
 
     return (
@@ -19,19 +19,19 @@ export default function Banner() {
                 <table className="flex text-center justify-center">  
                     <tbody className="flex flex-col p-10"> 
                         <tr >
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
+                            <td onClick={() => marcar(0)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[0]}</td>
+                            <td onClick={() => marcar(1)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[1]}</td>
+                            <td onClick={() => marcar(2)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[2]}</td>
                         </tr>
                         <tr >
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
+                            <td onClick={() => marcar(3)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[2]}</td>
+                            <td onClick={() => marcar(4)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[4]}</td>
+                            <td onClick={() => marcar(5)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[5]}</td>
                         </tr>
                         <tr >
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
-                            <td className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black"></td>
+                            <td onClick={() => marcar(6)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[6]}</td>
+                            <td onClick={() => marcar(7)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[7]}</td>
+                            <td onClick={() => marcar(8)} className="h-20 w-20 bg-blue-900 hover:scale-110 cursor-pointer text-black border border-black">{list[8]}</td>
                         </tr>
                     </tbody>
                 </table>
