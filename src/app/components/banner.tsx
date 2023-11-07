@@ -7,10 +7,10 @@ export default function Banner() {
     const [list, setList] = useState(["", "", "", "", "", "", "", "", ""])
 
     function marcar(index:number){
-       if(list[index] != "")
-       list[index] = player
+        if(list[index] != "X")return
+        list[index] = player
         setList([...list])
-        setPlayer(player == "X" ? "O" : "X ")
+        setPlayer(player == "X" ? "O" : "X")
     }
 
     return (
